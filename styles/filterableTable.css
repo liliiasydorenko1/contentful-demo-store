@@ -1,0 +1,29 @@
+@layer {
+  .table-container {
+    @apply overflow-auto
+  }
+
+  .header-row {
+    @apply grid md:grid-cols-4 mb-4 mx-2 md:mx-0 gap-2
+  }
+
+  .filter-container {
+    @apply relative md:col-span-3
+  }
+
+
+
+  .clear-filter{
+    @apply !absolute right-4 top-[-2px]
+  }
+
+  div:has(> select.form-control) {
+    @apply justify-self-end
+  }
+
+
+
+  .record-count {
+    @apply md:col-span-4 text-sm mt-4
+  }
+}

@@ -1,0 +1,31 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@import '../styles/filterableTable.css';
+
+@layer components {
+  .btn-primary {
+    @apply my-2 flex justify-center px-10 py-3 min-w-[192px] max-w-[240px] rounded-full border-black hover:border-accent-7 border-2 text-black hover:text-accent-7 font-semibold;
+  }
+  .btn-secondary {
+    @apply my-2 flex justify-center px-10 py-3 min-w-[192px] max-w-[240px] rounded-full border-white hover:border-accent-1 border-2 text-white hover:text-accent-1 font-semibold;
+  }
+  .link-secondary {
+    @apply my-1 text-black font-light hover:text-accent-7;
+  }
+  .navigation {
+    @apply my-1 mr-6 text-black font-semibold border-b-2 border-white hover:border-black flex items-center;
+  }
+  .navigation-second-level {
+    @apply px-2 py-1 text-black font-semibold flex items-center;
+  }
+}
+.pb-1\/1 {
+  padding-bottom: 100%;
+}
+.pb-2\/3 {
+  padding-bottom: 66.666667%;
+}
