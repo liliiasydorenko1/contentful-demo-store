@@ -3,7 +3,10 @@ import { getEntriesByContentType } from "../lib/helpers";
 import { useContentfulLiveUpdates } from "@contentful/live-preview/react";
 import { ContentfulLivePreview } from "@contentful/live-preview";
 import BannerGrid from '../components/bannerGrid'
+import Hero from '../components/hero'
 import Container from '../components/container'
+import GlobalMessage from "../components/global-message";
+import TextBlock from "../components/text-block";
 
 const DEFAULT_LOCALE = "en-US";
 
@@ -17,6 +20,7 @@ export default function Home(props) {
 
   return (
     <>
+
       <h1
         {...ContentfulLivePreview.getProps({
          entryId: page.sys.id,
@@ -36,13 +40,24 @@ export default function Home(props) {
             const fields = _.get(section, "fields");
             const headline = _.get(section, "fields.heading");
 
+            if (contentType === "globalMessage" && fields.isMessageVisible) {
+                return (
+                  <GlobalMessage
+                    key={section.sys.id + contentType}
+                    message={fields.message}
+                    link={fields.link}
+                    backgroundColor={fields.backgroundColor}
+                  />
+                )
+            }
+
             if (contentType === "title") {
               return <h1
                 {...ContentfulLivePreview.getProps({
-                                                     entryId: section.sys.id,
-                                                     fieldId: "heading",
-                                                     locale: DEFAULT_LOCALE,
-                                                   })}
+                 entryId: section.sys.id,
+                 fieldId: "heading",
+                 locale: DEFAULT_LOCALE,
+               })}
                 className="font-bold text-2xl mb-4 text-center"
                 key={sectionId + contentType}>
                 {headline}
@@ -56,6 +71,31 @@ export default function Home(props) {
                       bannersCollection={fields.banners}
                     />
                   );
+            }
+            else if (contentType === 'hero') {
+              const hero = fields.content[0].fields;
+              return (
+                <Hero
+                  key={section.sys.id + contentType}
+                  title={hero.title}
+                  subtitle={hero.subtitle}
+                  image={hero.image.fields.file ? hero.image.fields.file.url : ''}
+                  contentPosition={hero.contentPosition}
+                  heroLink={hero.heroLink}
+                  brandName={hero.brandName}
+                  openInNewWindow={hero.openInNewWindow}
+                  imageOverlay={hero.imageOverlay}
+                />
+              );
+            }
+            else if (contentType === 'textBlock') {
+              return (
+                <TextBlock
+                  title={fields.title}
+                  text={fields.text.content}
+                  backgroundColor={fields.backgroundColor}
+                />
+              )
             }
             return <></>;
           })

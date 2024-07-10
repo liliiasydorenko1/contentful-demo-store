@@ -7,11 +7,8 @@
 @import '../styles/filterableTable.css';
 
 @layer components {
-  .btn-primary {
-    @apply my-2 flex justify-center px-10 py-3 min-w-[192px] max-w-[240px] rounded-full border-black hover:border-accent-7 border-2 text-black hover:text-accent-7 font-semibold;
-  }
   .btn-secondary {
-    @apply my-2 flex justify-center px-10 py-3 min-w-[192px] max-w-[240px] rounded-full border-white hover:border-accent-1 border-2 text-white hover:text-accent-1 font-semibold;
+    @apply my-2 inline-flex justify-center px-2 py-3 min-w-[100px] rounded text-black font-semibold bg-white;
   }
   .link-secondary {
     @apply my-1 text-black font-light hover:text-accent-7;
@@ -22,6 +19,15 @@
   .navigation-second-level {
     @apply px-2 py-1 text-black font-semibold flex items-center;
   }
+  .bannerGridCol {
+    @apply md:pr-2 md:pl-2 w-full;
+  }
+  .bannerGridCol:last-child {
+    @apply md:pr-0;
+  }
+  .bannerGridCol:first-child {
+    @apply md:pl-0;
+  }
 }
 .pb-1\/1 {
   padding-bottom: 100%;
@@ -30,5 +36,8 @@
   padding-bottom: 66.666667%;
 }
 .pb-1\/5 {
-  padding-bottom: 25%;
+  padding-bottom: 26%;
+}
+.pb-4\/5 {
+  padding-bottom: 55%;
 }

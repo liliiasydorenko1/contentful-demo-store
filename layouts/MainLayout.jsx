@@ -5,13 +5,13 @@ const MainLayout = (props) => {
   return (
     <>
       <Head>
-        <title>Jumpstart Shop</title>
+        <title>BAUHAUS demo</title>
       </Head>
 
 
 
       <main>
-        <div className="h-screenx py-20 px-60"> {props.children}</div>
+        <div className="h-screenx py-20 xl:px-60 lg:px-0"> {props.children}</div>
       </main>
 
     </>

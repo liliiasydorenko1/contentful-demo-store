@@ -1,4 +1,4 @@
-# Jumpstart shop demo
+# BAUHAUS demo
 
 # Requirements
 
