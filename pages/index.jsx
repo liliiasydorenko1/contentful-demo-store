@@ -91,6 +91,8 @@ export default function Home(props) {
             else if (contentType === 'textBlock') {
               return (
                 <TextBlock
+                  key={section.sys.id + contentType}
+                  sysId={section.sys.id + contentType}
                   title={fields.title}
                   text={fields.text.content}
                   backgroundColor={fields.backgroundColor}

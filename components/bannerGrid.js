@@ -15,12 +15,13 @@ export default function BannerGrid({
 
   return (
     <div className={classNames("grid w-full sm:grid-cols-1 gap-4 mb-4", gridNum[bannerGrid])} >
-      {bannersCollection && bannersCollection.map((item) => {
+      {bannersCollection && bannersCollection.map((item, index) => {
         const contentType = item.sys.contentType.sys.id;
 
 
             if(contentType === 'banner'){
               return  <Banner
+                key={item.sys.id + contentType}
                 banner={item}
                 bannerGrid={bannerGrid}
               />
@@ -28,7 +29,9 @@ export default function BannerGrid({
 
         if(contentType === 'textBlock') {
           return <TextBlock
+            key={item.sys.id + contentType}
             title={item.fields.title}
+            sysId={item.sys.id + index}
             text={item.fields.text.content}
             backgroundColor={item.fields.backgroundColor}
           />

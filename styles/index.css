@@ -22,12 +22,6 @@
   .bannerGridCol {
     @apply md:pr-2 md:pl-2 w-full;
   }
-  .bannerGridCol:last-child {
-    @apply md:pr-0;
-  }
-  .bannerGridCol:first-child {
-    @apply md:pl-0;
-  }
 }
 .pb-1\/1 {
   padding-bottom: 100%;
