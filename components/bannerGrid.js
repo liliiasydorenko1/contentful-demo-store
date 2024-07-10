@@ -11,6 +11,7 @@ export default function BannerGrid({
     '4': 'grid-cols-4'
   }
   const imageRatio = {
+    '1': 'pb-1/5',
     '2': 'pb-2/3',
     '3': 'pb-4/5',
     '4': 'pb-1/1'
@@ -26,9 +27,9 @@ export default function BannerGrid({
               <div className="max-w-[800px]">
                 <h1 className="text-2xl font-bold">{banner.fields.title}</h1>
                 <p className="min-h-[48px] hidden lg:block">{banner.fields.description}</p>
-                <Link href={`${banner.fields.button_link}`}
+                {banner.fields.button_link && <Link href={`${banner.fields.button_link}`}
                       target={banner.fields.openInNewWindow ? '_blank' : '_parent'}
-                      className="link">{banner.fields.button_text}</Link>
+                      className="link">{banner.fields.button_text}</Link>}
               </div>
             </div>
           </div>
