@@ -15,6 +15,7 @@ const ProductPage = (props) => {
   const title = _.get(product, "fields.title");
   const image = _.get(product, "fields.image");
   const gallery = _.get(product, "fields.gallery"); //new gallery field
+  const slug = _.get(product, "fields.slug");
 
   return (
     <div className="relative h-full ">
@@ -40,7 +41,7 @@ const ProductPage = (props) => {
   );
 };
 
-export async function getStaticPaths() {
+export async function getStaticPaths(slug) {
   const productEntries = await getEntriesByContentType("product");
 
   let paths = [];
