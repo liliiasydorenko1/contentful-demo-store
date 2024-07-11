@@ -90,7 +90,6 @@ export default function Home(props) {
               );
             }
             else if (contentType === 'textBlock') {
-              console.log(section)
               return (
                 <TextBlock
                   key={section.sys.id + contentType}
