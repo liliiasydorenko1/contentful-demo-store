@@ -76,7 +76,8 @@ export default function Home(props) {
               const hero = fields.content[0].fields;
               return (
                 <Hero
-                  key={section.sys.id + contentType}
+                  key={fields.content[0].sys.id + contentType}
+                  sysId={fields.content[0].sys.id}
                   title={hero.title}
                   subtitle={hero.subtitle}
                   image={hero.image.fields.file ? hero.image.fields.file.url : ''}
@@ -89,10 +90,11 @@ export default function Home(props) {
               );
             }
             else if (contentType === 'textBlock') {
+              console.log(section)
               return (
                 <TextBlock
                   key={section.sys.id + contentType}
-                  sysId={section.sys.id + contentType}
+                  sysId={section.sys.id}
                   title={fields.title}
                   text={fields.text.content}
                   backgroundColor={fields.backgroundColor}

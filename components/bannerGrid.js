@@ -22,6 +22,7 @@ export default function BannerGrid({
             if(contentType === 'banner'){
               return  <Banner
                 key={item.sys.id + contentType}
+                sysId={item.sys.id}
                 banner={item}
                 bannerGrid={bannerGrid}
               />
@@ -31,7 +32,7 @@ export default function BannerGrid({
           return <TextBlock
             key={item.sys.id + contentType}
             title={item.fields.title}
-            sysId={item.sys.id + index}
+            sysId={item.sys.id}
             text={item.fields.text.content}
             backgroundColor={item.fields.backgroundColor}
           />
