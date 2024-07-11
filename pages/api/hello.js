@@ -3,7 +3,7 @@ import { draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
 import {getEntriesByContentType} from "../../lib/helpers";
 
-export async function GET(request: Request) {
+export async function GET(request) {
   // Parse query string parameters
   const { searchParams } = new URL(request.url)
   const secret = searchParams.get('secret')
