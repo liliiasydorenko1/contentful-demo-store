@@ -10,7 +10,7 @@ export default function ProductsGrid({
 }) {
 
   return (
-    <div className={classNames("grid w-full grid-cols-2 md:grid-cols-2 mb-4 xl:grid-cols-6")}
+    <div className={classNames("grid w-full grid-cols-2 mb-4 md:grid-cols-6")}
       {...ContentfulLivePreview.getProps({
                                            entryId: sysId,
                                            fieldId: "productsGrid",
