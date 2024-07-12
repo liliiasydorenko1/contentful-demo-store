@@ -12,7 +12,7 @@ export default function ProductsGrid({
 }) {
 
   return (
-    <div className={classNames("grid w-full sm:grid-cols-1 mb-4 md:grid-cols-6")}>
+    <div className={classNames("grid w-full sm:grid-cols-2 mb-4 md:grid-cols-6")}>
       {productsGrid.map((item, index) => {
         return <div className="product-card">
           <div className="pb-1/1">
