@@ -7,6 +7,8 @@ import Hero from '../components/hero'
 import Container from '../components/container'
 import GlobalMessage from "../components/global-message";
 import TextBlock from "../components/text-block";
+import ProductsGrid from "../components/products-grid";
+import products from './ecommerce_api_response_new2.json';
 
 const DEFAULT_LOCALE = "en-US";
 
@@ -97,6 +99,15 @@ export default function Home(props) {
                   title={fields.title}
                   text={fields.text.content}
                   backgroundColor={fields.backgroundColor}
+                />
+              )
+            }
+            else if (contentType === 'productsGrid') {
+              return (
+                <ProductsGrid
+                  key={section.sys.id + contentType}
+                  sysId={section.sys.id}
+                  productsGrid={products.items}
                 />
               )
             }

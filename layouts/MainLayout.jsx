@@ -11,7 +11,7 @@ const MainLayout = (props) => {
 
 
       <main>
-        <div className="h-screenx py-20 xl:px-60 lg:px-0"> {props.children}</div>
+        <div className="h-screenx py-20 xl:px-40 lg:px-0"> {props.children}</div>
       </main>
 
     </>

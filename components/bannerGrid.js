@@ -37,8 +37,6 @@ export default function BannerGrid({
             backgroundColor={item.fields.backgroundColor}
           />
         }
-
-
       })}
     </div>
   );

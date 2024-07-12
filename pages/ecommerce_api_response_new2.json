@@ -1,0 +1,47 @@
+{
+    "items": [
+      {
+      "sku": "pc2109_0135",
+      "name": "BADRUMSMÖBEL SVEDBERGS EPOS TVÅ LÅDOR FRISTÅENDE TVÄTTSTÄLL 80CM",
+      "id": "276573",
+      "image": "https://images.ctfassets.net/5z5j64aebgin/1crGlbO8qOBgkbPpnTLEwy/3d889c78037e2190ff47d257d4bb6f17/pc2109_0135.jpg",
+        "price": "Från 18 856,00 kr"
+      },
+      {
+        "sku": "234324KRB245345Mff",
+        "name": "BADRUMSMÖBEL SVEDBERGS EPOS VÄNSTER 120CM",
+        "id": "2324KRB245345M",
+        "image": "https://images.ctfassets.net/5z5j64aebgin/3wrwKuda4aS820Zhruhyu5/00c7d9b7de82b143d9a53a24582bc09e/pc2109_0168.jpg",
+        "price": "26 064,00 kr"
+      },
+      {
+        "sku": "693934iKRBkAhh",
+        "name": "BADKAR SVEDBERGS Z1600VG 160X70/85 VÄNSTER MED GAVEL",
+        "id": "393iKRBkAsC7wMgrvi1h",
+        "image": "https://images.ctfassets.net/5z5j64aebgin/3zYifWiMt9nMebBttvyvnc/e488ec1d6606ef7efd6a78109ad657ef/3001472d.jpg",
+        "price": "15 832,00 kr"
+      },
+      {
+        "sku": "6bwo3iKRBkllvi1h",
+        "id": "6bwo3iKRBkAsgrvi1h",
+        "name": "SPEGEL SVEDBERGS ISTA RUND SVART RAM Ø80 CM",
+        "image": "https://images.ctfassets.net/5z5j64aebgin/3FNhQOKmh7KqIvQSquXMhn/98fd202f152d81e3c710d991192eb332/3001406d.jpg",
+        "price": "6 952,00 kr"
+      },
+      {
+        "sku": "RBkAsC7wMgrvi1h",
+        "id": "6bwoAsC7wMgrvi1h",
+        "name": "DUSCHHÖRNA SVEDBERGS SKOGA HALVRUND KLARGLAS KROM",
+        "image": "https://images.ctfassets.net/5z5j64aebgin/53qk3Zk9a9DcjsmeI9qi6F/24aab6a374bd3f39ffecc1863e5ac09e/3002975b.jpg",
+        "price": "Från 6 952,00 kr"
+      },
+      {
+        "sku": "6bwo3iKRBkgrvi1h",
+        "id": "6bwo3iKRBkAsC7w",
+        "name": "SPEGELSKÅP SVEDBERGS SAREK LED VIT MED JFB 60CM",
+        "image": "https://images.ctfassets.net/5z5j64aebgin/3mxgAub8NUHYgGKv5cMEcS/2eb776762c9fc857cf88545072b82f72/pc2109_0154.jpg",
+        "price": "6 872,00 kr"
+      }
+    ]
+  }
+
