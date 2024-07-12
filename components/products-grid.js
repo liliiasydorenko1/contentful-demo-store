@@ -6,6 +6,7 @@ const DEFAULT_LOCALE = "en-US";
 
 export default function ProductsGrid({
   productsGrid,
+  productsSkus,
   sysId
 }) {
 
@@ -16,7 +17,7 @@ export default function ProductsGrid({
                                            fieldId: "productsGrid",
                                            locale: DEFAULT_LOCALE,
                                          })}>
-      {productsGrid.map((item, index) => {
+      {productsSkus.map((item, index) => {
         return <div key={sysId + index} className="product-card">
           <div className="pb-1/1">
             <ContentfulImage
@@ -24,11 +25,11 @@ export default function ProductsGrid({
               height={1000}
               alt="111"
               className="absolute l-0 t-0 p-6"
-              src={item.image}
+              src={productsGrid.filter(i => i.sku === item)[0].image}
             />
           </div>
-          <a href="#" className="product-card__name text-sm font-semibold">{item.name}</a>
-          <div className="product-card__price text-l font-bold">{item.price}</div>
+          <a href="#" className="product-card__name text-sm font-semibold">{productsGrid.filter(i => i.sku === item)[0].name}</a>
+          <div className="product-card__price text-l font-bold">{productsGrid.filter(i => i.sku === item)[0].price}</div>
         </div>
 
       })}

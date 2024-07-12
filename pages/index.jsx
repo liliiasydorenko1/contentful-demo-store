@@ -107,6 +107,7 @@ export default function Home(props) {
                 <ProductsGrid
                   key={section.sys.id + contentType}
                   sysId={section.sys.id}
+                  productsSkus={fields.productsSku}
                   productsGrid={products.items}
                 />
               )
