@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import Banner from "./banner";
-import _ from "lodash";
 import TextBlock from "./text-block";
 
 export default function BannerGrid({
