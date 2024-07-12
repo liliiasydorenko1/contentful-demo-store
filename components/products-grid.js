@@ -27,7 +27,7 @@ export default function ProductsGrid({
               src={item.image}
             />
           </div>
-          <a  href="/" className="product-card__name text-sm font-semibold">{item.name}</a>
+          <a href="#" className="product-card__name text-sm font-semibold">{item.name}</a>
           <div className="product-card__price text-l font-bold">{item.price}</div>
         </div>
 
