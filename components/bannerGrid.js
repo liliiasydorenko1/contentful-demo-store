@@ -4,7 +4,10 @@ import TextBlock from "./text-block";
 
 export default function BannerGrid({
   bannerGrid,
-  bannersCollection
+  bannersCollection,
+  isSmallBanners,
+  isAlternativeMobileView,
+  visibleOnMobile
 }) {
   const gridNum = {
     '2': 'md:grid-cols-2',
@@ -13,7 +16,7 @@ export default function BannerGrid({
   }
 
   return (
-    <div className={classNames("grid w-full sm:grid-cols-1 gap-4 mb-4", gridNum[bannerGrid])} >
+    <div className={classNames("grid w-full gap-4 mb-4 sm:grid-cols-1", visibleOnMobile ? '' : 'hiddenOnMobile', isAlternativeMobileView ? 'banner-grid-alt' : '', gridNum[bannerGrid])}>
       {bannersCollection && bannersCollection.map((item, index) => {
         const contentType = item.sys.contentType.sys.id;
 
@@ -23,7 +26,7 @@ export default function BannerGrid({
                 key={item.sys.id + contentType}
                 sysId={item.sys.id}
                 banner={item}
-                bannerGrid={bannerGrid}
+                isSmallBanners={isSmallBanners}
               />
             }
 

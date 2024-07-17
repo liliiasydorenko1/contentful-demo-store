@@ -67,3 +67,33 @@
 .product-card__price {
   padding: 30px;
 }
+@media (min-width: 767px) {
+  .hiddenOnDesktop {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hiddenOnMobile {
+    display: none;
+  }
+  .banner-grid-alt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    .bannerGridCol {
+      &:first-child {
+        grid-area: 1 / 1 / 3 / 2;
+        height: 100%;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      &:last-child {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+  }
+
+}

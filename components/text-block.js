@@ -8,7 +8,6 @@ export default function TextBlock({
   backgroundColor,
   sysId
 }) {
-  console.log(sysId)
 
   return (
     <div className={classNames("bannerGridCol mb-6 h-full xl:p-0 p-4", backgroundColor && "p-4 xl:p-4")} style={backgroundColor && {backgroundColor: backgroundColor}}>

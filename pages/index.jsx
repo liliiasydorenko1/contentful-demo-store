@@ -46,6 +46,7 @@ export default function Home(props) {
                 return (
                   <GlobalMessage
                     key={section.sys.id + contentType}
+                    sysId={section.sys.id}
                     message={fields.message}
                     link={fields.link}
                     backgroundColor={fields.backgroundColor}
@@ -70,7 +71,11 @@ export default function Home(props) {
                     <BannerGrid
                       key={section.sys.id + contentType}
                       bannerGrid={fields.bannerGrid}
+                      sysId={section.sys.id}
                       bannersCollection={fields.banners}
+                      isSmallBanners={fields.isSmallBanners}
+                      isAlternativeMobileView={fields.isAlternativeMobileView}
+                      visibleOnMobile={fields.visibleOnMobile}
                     />
                   );
             }

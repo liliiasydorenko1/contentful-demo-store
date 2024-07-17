@@ -13,10 +13,10 @@ export default function ProductsGrid({
   return (
     <div className={classNames("grid w-full grid-cols-2 mb-4 md:grid-cols-6")}
       {...ContentfulLivePreview.getProps({
-                                           entryId: sysId,
-                                           fieldId: "productsGrid",
-                                           locale: DEFAULT_LOCALE,
-                                         })}>
+       entryId: sysId,
+       fieldId: "productsGrid",
+       locale: DEFAULT_LOCALE,
+     })}>
       {productsSkus.map((item, index) => {
         return <div key={sysId + index} className="product-card">
           <div className="pb-1/1">
