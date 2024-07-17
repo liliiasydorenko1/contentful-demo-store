@@ -1,10 +1,13 @@
 import Head from "next/head";
+import _ from "lodash";
 
 const MainLayout = (props) => {
   const data  = props.children.props;
-  const sections = data.page.fields.content;
-  const seoData = sections.filter(data => data.sys.contentType.sys.id === 'seoMetadata')[0].fields;
+  const page = _.get(data, "page");
+  const sections = _.get(page, "fields.content"); // this field is an array of page sections
+  const seoData =  typeof sections !== 'undefined' ? sections.filter(data => data.sys.contentType.sys.id === 'seoMetadata')[0].fields : '';
 
+  console.log(seoData)
   return (
     <div>
       <Head>
