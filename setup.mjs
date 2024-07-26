@@ -78,7 +78,7 @@ inquirer
         `NEXT_PUBLIC_DELIVERY_TOKEN='${accessToken}'`,
         `NEXT_PUBLIC_PREVIEW_TOKEN='${previewToken}'`,
         `CMA_TOKEN='${managementToken}'`,
-        `NEXT_PUBLIC_PREVIEW_SECRET='testing'`,
+        `CONTENTFUL_PREVIEW_SECRET='testing'`,
         `NEXT_PUBLIC_ENVIRONMENT='${env}'`,
       ].join("\n") + "\n";
 
