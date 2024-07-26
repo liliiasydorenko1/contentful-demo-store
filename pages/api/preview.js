@@ -3,9 +3,8 @@ import { getEntriesByContentType } from "../../lib/helpers";
 export default async function preview(req, res) {
   const { secret, slug } = req.query
 
-  console.log(secret, process.env.CONTENTFUL_PREVIEW_SECRET, slug)
   if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET || !slug) {
-    return res.status(401).json({ message: 'Invalid token' })
+    return res.status(401).json({ message: 'Invalid token', secret: secret, envSecret: process.env.CONTENTFUL_PREVIEW_SECRET, slug: slug})
   }
 
   // Fetch the headless CMS to check if the provided `slug` exists
