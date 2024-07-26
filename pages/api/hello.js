@@ -3,9 +3,6 @@ import { getEntriesByContentType } from "../../lib/helpers";
 export default async function preview(req, res) {
   const { secret, slug } = req.query
 
-  if (secret !== process.env.NEXT_PUBLIC_PREVIEW_SECRET || !slug) {
-    return res.status(401).json({ message: 'Invalid token' })
-  }
 
   // Fetch the headless CMS to check if the provided `slug` exists
   const post = await getEntriesByContentType("page", "home-page");
@@ -21,7 +18,7 @@ export default async function preview(req, res) {
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
   // res.writeHead(307, { Location: `/posts/${post.slug}` })
-  const url = `/posts/${post.slug}`
+  const url = `/${post.slug}`
   res.setHeader('Content-Type', 'text/html')
   res.write(
     `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
