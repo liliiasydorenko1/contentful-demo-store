@@ -7,6 +7,7 @@ const DEFAULT_LOCALE = "en-US";
 export default function Hero({
   title,
   image,
+  mobileImage,
   contentPosition,
   heroLink,
   brandName,
@@ -19,7 +20,6 @@ export default function Hero({
     'center': 'items-center w-full',
     'right': 'items-end md:basis-2/4'
   }
-
   return (
     <div
       {...ContentfulLivePreview.getProps({
@@ -27,22 +27,31 @@ export default function Hero({
                                            fieldId: "image",
                                            locale: DEFAULT_LOCALE,
                                          })}
-      className={classNames("relative flex bg-center bg-no-repeat bg-cover md:h-[276px] text-white mb-4")}>
+      className={classNames("relative flex bg-center bg-no-repeat bg-cover  min-h-[276px] text-white mb-4")}>
       {imageOverlay && (
           <div className="absolute inset-0 w-full h-full bg-white bg-opacity-50"/>
         )}
         {image.contentType == "video/mp4" ?
-          <video src={image.url} className="object-cover object-center w-full h-[276px] xl:h-[276px]" autoPlay loop muted/>
+          <video src={image.url} className="object-cover object-center w-full " autoPlay loop muted/>
         :
+          <>
 
           <ContentfulImage
             width={2600}
             height={1000}
             alt={`Cover Image for ${title}`}
-            className="shadow-small object-cover object-center h-[276px] xl:h-[276px]"
+            className={classNames("shadow-small object-cover object-center ", mobileImage && 'hiddenOnMobile')}
             src={'https:' + image}
             />
-
+            {mobileImage &&
+            <ContentfulImage
+              width={2600}
+              height={1000}
+              alt={`Cover Image for ${title}`}
+              className={classNames("shadow-small object-cover object-center hiddenOnDesktop")}
+              src={'https:' + mobileImage}
+            /> }
+          </>
         }
         <Link href={`${heroLink}`} target={ openInNewWindow ? '_blank' : '_parent'}>
 

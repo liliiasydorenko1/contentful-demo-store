@@ -76,7 +76,7 @@
   .hiddenOnMobile {
     display: none;
   }
-  .banner-grid-alt {
+  .banner-grid-alt-3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -92,6 +92,25 @@
       }
       &:last-child {
         grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+  }
+  .banner-grid-alt-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+    min-height: 400px;
+
+    .bannerGridCol {
+      &:first-child {
+        grid-area: 1 / 1 / 3 / 2;
+        height: 100%;
+      }
+      &:last-child {
+        grid-area: 1 / 2 / 3 / 3;
+        height: 100%;
+
       }
     }
   }

@@ -88,6 +88,7 @@ export default function Home(props) {
                   title={hero.title}
                   subtitle={hero.subtitle}
                   image={hero.image.fields.file ? hero.image.fields.file.url : ''}
+                  mobileImage={hero.mobileImage && hero.mobileImage.fields.file.url}
                   contentPosition={hero.contentPosition}
                   heroLink={hero.heroLink}
                   brandName={hero.brandName}

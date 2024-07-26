@@ -3,7 +3,6 @@ import Banner from "./banner";
 import TextBlock from "./text-block";
 
 export default function BannerGrid({
-  bannerGrid,
   bannersCollection,
   isSmallBanners,
   isAlternativeMobileView,
@@ -16,10 +15,12 @@ export default function BannerGrid({
   }
 
   return (
-    <div className={classNames("grid w-full gap-4 mb-4 sm:grid-cols-1", visibleOnMobile ? '' : 'hiddenOnMobile', isAlternativeMobileView ? 'banner-grid-alt' : '', gridNum[bannerGrid])}>
-      {bannersCollection && bannersCollection.map((item, index) => {
+    <div className={classNames("grid w-full gap-4 mb-4 sm:grid-cols-1", visibleOnMobile ? '' : 'hiddenOnMobile',
+                               isAlternativeMobileView && bannersCollection.length === 3 ? 'banner-grid-alt-3'
+                                 : isAlternativeMobileView  && bannersCollection.length === 2 ? 'banner-grid-alt-2' : '',
+                               bannersCollection && gridNum[bannersCollection.length])}>
+      {bannersCollection && bannersCollection.map((item) => {
         const contentType = item.sys.contentType.sys.id;
-
 
             if(contentType === 'banner'){
               return  <Banner

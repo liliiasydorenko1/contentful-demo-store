@@ -7,7 +7,6 @@ const MainLayout = (props) => {
   const sections = _.get(page, "fields.content"); // this field is an array of page sections
   const seoData =  typeof sections !== 'undefined' ? sections.filter(data => data.sys.contentType.sys.id === 'seoMetadata')[0].fields : '';
 
-  console.log(seoData)
   return (
     <div>
       <Head>

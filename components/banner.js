@@ -28,7 +28,6 @@ export default function Banner({
            style={{
              backgroundImage: banner.fields.image.fields.file ? `url(${banner.fields.image.fields.file.url})` : ""
            }}>
-           <h3 className="uppercase">{banner.fields.subtitle}</h3>
            <div className="max-w-[800px]">
              <h1 className="text-2xl font-bold">{banner.fields.title}</h1>
              {banner.fields.buttonLink &&
@@ -52,7 +51,6 @@ export default function Banner({
           style={{
             backgroundImage: banner.fields.mobileImage.fields.file ? `url(${banner.fields.mobileImage.fields.file.url})` : ""
           }}>
-          <h3 className="uppercase">{banner.fields.subtitle}</h3>
           <div className="max-w-[800px]">
             <h1 className="text-2xl font-bold">{banner.fields.title}</h1>
             {banner.fields.buttonLink &&
