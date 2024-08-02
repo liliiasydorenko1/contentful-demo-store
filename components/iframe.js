@@ -10,7 +10,7 @@ export default function Iframe({
 
   return (
 
-    <div  {...ContentfulLivePreview.getProps({
+    <div key={sysId} {...ContentfulLivePreview.getProps({
                                                entryId: sysId,
                                                fieldId: "iframe",
                                                locale: DEFAULT_LOCALE,

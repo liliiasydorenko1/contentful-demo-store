@@ -120,9 +120,9 @@ export default function Home(props) {
               )
             }
             else if (contentType === 'iframe') {
-              console.log(fields)
               return (
                 <Iframe
+                  key={section.sys.id + contentType}
                   sysId={section.sys.id}
                   input={fields.iframeHtml}
                 />
