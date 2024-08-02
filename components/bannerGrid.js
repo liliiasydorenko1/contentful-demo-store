@@ -22,11 +22,12 @@ export default function BannerGrid({
       {bannersCollection && bannersCollection.map((item) => {
         const contentType = item.sys.contentType.sys.id;
 
-            if(contentType === 'banner'){
+            if(contentType === 'banner' || contentType === 'bannerWithCloudinaryImage'){
               return  <Banner
                 key={item.sys.id + contentType}
                 sysId={item.sys.id}
                 banner={item}
+                type={contentType}
                 isSmallBanners={isSmallBanners}
               />
             }

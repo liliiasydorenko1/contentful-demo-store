@@ -8,6 +8,7 @@ import Container from '../components/container'
 import GlobalMessage from "../components/global-message";
 import TextBlock from "../components/text-block";
 import ProductsGrid from "../components/products-grid";
+import Iframe from "../components/iframe";
 import products from './ecommerce_api_response_new2.json';
 
 const DEFAULT_LOCALE = "en-US";
@@ -115,6 +116,15 @@ export default function Home(props) {
                   sysId={section.sys.id}
                   productsSkus={fields.productsSku}
                   productsGrid={products.items}
+                />
+              )
+            }
+            else if (contentType === 'iframe') {
+              console.log(fields)
+              return (
+                <Iframe
+                  sysId={section.sys.id}
+                  input={fields.iframeHtml}
                 />
               )
             }

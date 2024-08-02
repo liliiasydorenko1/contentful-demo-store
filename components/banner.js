@@ -8,10 +8,15 @@ import ContentfulImage from "./contentful-image";
 export default function Banner({
   isSmallBanners,
   banner,
-  sysId
+  sysId,
+  type
 }) {
   useEffect(() => {
   })
+  const image = type === 'banner' ? banner.fields.image : banner.fields.image;
+  const mobileImage = type === 'banner' ? banner.fields.mobileImage : banner.fields.mobileImage;
+  const imageFile = image && (type === 'banner' ? image.fields.file : image[0])
+  const mobileImageFile = mobileImage && type === 'banner' ? mobileImage.fields.file : mobileImage && type !== 'banner' ? mobileImage[0] : 'undefined';
     return (
       <div
         {...ContentfulLivePreview.getProps({
@@ -21,12 +26,12 @@ export default function Banner({
                                            })}
 
         className={classNames("bannerGridCol relative w-full h-0", isSmallBanners ? 'pb-1/5' : 'pb-1/1')}>
-        {banner.fields.image &&
+        {image &&
          <div
            key={banner.sys.id + 'desk'}
            className={classNames("absolute inset-0 flex flex-col justify-between p-4 bg-center bg-no-repeat bg-cover w-full h-full text-black", banner.fields.mobileImage && 'hiddenOnMobile')}
            style={{
-             backgroundImage: banner.fields.image.fields.file ? `url(${banner.fields.image.fields.file.url})` : ""
+             backgroundImage: imageFile ? `url(${imageFile.url})` : ""
            }}>
            <div className="max-w-[800px]">
              <h1 className="text-2xl font-bold">{banner.fields.title}</h1>
@@ -44,12 +49,12 @@ export default function Banner({
            </div>
          </div>
         }
-        {banner.fields.mobileImage &&
+        {mobileImage &&
         <div
           key={banner.sys.id + 'mob'}
           className={classNames("absolute inset-0 flex flex-col justify-between p-4 bg-center bg-no-repeat bg-cover w-full h-full text-black hiddenOnDesktop")}
           style={{
-            backgroundImage: banner.fields.mobileImage.fields.file ? `url(${banner.fields.mobileImage.fields.file.url})` : ""
+            backgroundImage: mobileImageFile ? `url(${mobileImageFile.url})` : ""
           }}>
           <div className="max-w-[800px]">
             <h1 className="text-2xl font-bold">{banner.fields.title}</h1>
